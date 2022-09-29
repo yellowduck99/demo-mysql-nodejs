@@ -21,7 +21,7 @@ conn.connect(function(err) {
     console.log('connecting success');
 });
 
-
+// link to seperate api file
 app.use((req,res,next) => {
     req.con = conn;
     next()
@@ -29,9 +29,6 @@ app.use((req,res,next) => {
 
 const route = require(__dirname+'/lib/db.js')
 app.use(route)
-
-
-
 
 app.listen(PORT, ()=> {
     console.log(`App listening at port ${PORT}`)
