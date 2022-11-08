@@ -1,18 +1,11 @@
 import express from 'express'
 import mysql from 'mysql2'
+import CONFIG from './config.js'
 
-const PORT = 3002
+const PORT = 3000
 const app = express()
-const IP = '' // your DB IP
-const PASSWORD = '' // your DB root pw
 
-
-const conn = mysql.createConnection({ 
-    host:IP,
-    user:'root',
-    password: PASSWORD,
-    database: 'classicmodels'
-});
+const conn = mysql.createConnection(CONFIG);
 
 
 conn.connect(function(err) {
